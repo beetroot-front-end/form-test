@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .form {
+            width: 400px;
+            height: 300px;
+            background-color: pink;
+            border: 2px solid black;
+            margin: 30px auto;
+            position: relative;
+        }
+        .form-section {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+        }
+        .form-section.active {
+            opacity: 1;
+            z-index: 2;
+        }
+        .form [type="submit"],
+        .form [type="button"] {
+            position: absolute;
+            bottom: 80px;
+            left: 50%;
+            transform:translate(-50%);
+            opacity: 0;
+            z-index: 1;
+        }
+        .form [type="button"].active {
+            opacity: 1;
+            z-index: 2;
+        }
+        .form [type="submit"].active {
+            opacity: 1;
+            z-index: 2;
+        }
+    </style>
+</head>
+<body>
+    
+    <form action="" class="form">
+        <div class="form-section active">
+            <label>
+                Login <input type="text" name="login">
+            </label>
+        </div>
+        <div class="form-section">
+            <label>
+                Email <input type="email" name="email">
+            </label>
+        </div>
+        <div class="form-section">
+            <label>
+                Password <input type="password" name="password">
+            </label>
+        </div>
+        <button type="button" class="active"> NEXT </button>
+        <button type="submit"> SEND </button>
+    </form>
+    
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
