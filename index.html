@@ -9,10 +9,13 @@
         .form {
             width: 400px;
             height: 300px;
-            background-color: pink;
+            background-color: aqua;
             border: 2px solid black;
             margin: 30px auto;
             position: relative;
+        }
+        .form.error {
+            background-color: red;
         }
         .form-section {
             position: absolute;
@@ -20,6 +23,7 @@
             left: 50%;
             transform: translate(-50%, -50%);
             opacity: 0;
+            transition: opacity .5s ease;
         }
         .form-section.active {
             opacity: 1;
@@ -28,7 +32,7 @@
         .form [type="submit"],
         .form [type="button"] {
             position: absolute;
-            bottom: 80px;
+            bottom: 20px;
             left: 50%;
             transform:translate(-50%);
             opacity: 0;
@@ -62,9 +66,17 @@
                 Password <input type="password" name="password">
             </label>
         </div>
+        <div class="form-section final-data">
+            <ul>
+                <li data-value="login"> Login <b> test </b> </li>
+                <li data-value="email"> Email <b> test </b> </li>
+                <li data-value="password"> Password <b> test </b> </li>
+            </ul>
+        </div>
         <button type="button" class="active"> NEXT </button>
         <button type="submit"> SEND </button>
     </form>
+    <button class="reset"> RESET </button>
     
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
